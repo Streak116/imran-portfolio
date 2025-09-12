@@ -11,7 +11,7 @@ export default function About() {
       viewport={{ once: true }}
       className="min-h-screen flex flex-col justify-center items-center text-center px-6"
     >
-      <h2 className="text-4xl font-bold mb-4">Streak</h2>
+      <h2 className="text-4xl font-bold mb-4">Mohammed Imran</h2>
       <p className="text-lg max-w-2xl">
         Full Stack Developer with 2 years of hands-on experience in building
         scalable web applications using React, Next.js, Angular, NestJS, and
