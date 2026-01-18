@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Sparkles, TrendingUp, Zap } from "lucide-react";
-import { SiReact, SiNextdotjs, SiDjango, SiCelery, SiTypescript, SiPython, SiPostgresql } from "react-icons/si";
+import { SiReact, SiNextdotjs, SiDjango, SiCelery, SiTypescript, SiPostgresql } from "react-icons/si";
 
 const projects = [
   {

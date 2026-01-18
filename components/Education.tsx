@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { GraduationCap } from "lucide-react";
 
 const timeline = [
@@ -93,11 +94,12 @@ export default function EducationTimeline() {
                     {/* Logo + Degree */}
                     <div className="flex items-start gap-4 mb-4">
                       {item.logo && (
-                        <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gray-100 dark:bg-gray-700 p-2 shadow-md">
-                          <img
+                        <div className="relative flex-shrink-0 w-14 h-14 rounded-2xl bg-gray-100 dark:bg-gray-700 p-2 shadow-md">
+                          <Image
                             src={item.logo}
                             alt={item.school}
-                            className="w-full h-full object-contain"
+                            fill
+                            className="object-contain p-2"
                           />
                         </div>
                       )}

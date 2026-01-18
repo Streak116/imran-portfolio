@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const workExperience = [
@@ -91,11 +92,12 @@ export default function Work() {
                         : "bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-xl"
                     }`}
                 >
-                  <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center p-1.5 ${active ? "bg-white/20" : "bg-gray-100 dark:bg-gray-700"}`}>
-                    <img
+                  <div className={`relative flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center p-1.5 ${active ? "bg-white/20" : "bg-gray-100 dark:bg-gray-700"}`}>
+                    <Image
                       src={job.logo}
                       alt={`${job.company} logo`}
-                      className="w-full h-full object-contain"
+                      fill
+                      className="object-contain p-1.5"
                     />
                   </div>
 
@@ -140,11 +142,12 @@ export default function Work() {
                       </p>
                     </div>
 
-                    <div className="hidden md:block flex-shrink-0 w-20 h-20 rounded-2xl bg-gray-100 dark:bg-gray-700 p-3 shadow-md">
-                      <img
+                    <div className="hidden md:block relative flex-shrink-0 w-20 h-20 rounded-2xl bg-gray-100 dark:bg-gray-700 p-3 shadow-md">
+                      <Image
                         src={workExperience[selected].logo}
                         alt={`${workExperience[selected].company} logo`}
-                        className="w-full h-full object-contain"
+                        fill
+                        className="object-contain p-3"
                       />
                     </div>
                   </div>
