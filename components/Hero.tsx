@@ -14,7 +14,7 @@ const details = {
     "Specialized in React, Next.js, Angular, NestJS ⚡",
     "Exploring AI & LLM-powered systems 🤖",
   ],
-  resumeLink: "/Resume Imran.pdf",
+  resumeLink: process.env.NEXT_PUBLIC_RESUME_URL || "/Resume Imran.pdf",
   linkedIn: "https://www.linkedin.com/in/md-116-imran",
   github: "https://github.com/Streak116",
 };
