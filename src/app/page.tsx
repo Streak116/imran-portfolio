@@ -5,12 +5,14 @@ import Skills from "@/../components/Skills";
 import Projects from "@/../components/Projects";
 import Contact from "@/../components/Contact";
 import ScrollToTop from "@/../components/ScrollToTop";
+import Stats from "@/../components/Stats";
 
 export default function Home() {
   return (
     <>
       <div>
         <section id="about"><Hero /></section>
+        <Stats />
         <section id="work"><Work /></section>
         <section id="projects"><Projects /></section>
         <section id="skills"><Skills /></section>

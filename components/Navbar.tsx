@@ -83,10 +83,31 @@ export default function Navbar() {
                   key={section}
                   whileHover={{ y: -2 }}
                   onClick={() => handleClick(section)}
-                  className="relative cursor-pointer group"
+                  className="relative cursor-pointer group px-3 py-1.5"
                 >
+                  {/* Active background pill */}
+                  {active === section && (
+                    <motion.div
+                      layoutId="activeSection"
+                      className="absolute inset-0 rounded-lg bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200/60 dark:border-indigo-700/40"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+
+                  {/* Glowing dot above active item */}
+                  {active === section && (
+                    <motion.div
+                      layoutId="activeDot"
+                      className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-indigo-500"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    >
+                      {/* Pulse ring */}
+                      <span className="absolute inset-0 rounded-full bg-indigo-400 animate-ping opacity-60" />
+                    </motion.div>
+                  )}
+
                   <span
-                    className={`text-sm font-medium transition-colors ${
+                    className={`relative z-10 text-sm font-medium transition-colors ${
                       active === section
                         ? "text-indigo-600 dark:text-indigo-400"
                         : "text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
@@ -94,18 +115,6 @@ export default function Navbar() {
                   >
                     {t(`nav.${section.toLowerCase()}`)}
                   </span>
-
-                  {/* Active indicator - gradient underline */}
-                  {active === section && (
-                    <motion.div
-                      layoutId="activeSection"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-700 via-indigo-600 to-teal-500 rounded-full"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-
-                  {/* Hover indicator */}
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gray-300 dark:bg-gray-700 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
                 </motion.li>
               ))}
             </ul>

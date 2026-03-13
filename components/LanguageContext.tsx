@@ -168,6 +168,13 @@ export const translations: Record<Language, any> = {
       phone: "Phone",
       location: "Location",
       visakhapatnam: "Visakhapatnam, India"
+    },
+    stats: {
+      yearsExp: "Years Experience",
+      enterpriseProjects: "Enterprise Projects",
+      banksServed: "Banks Served",
+      setupReduction: "Setup Time Reduction",
+      setupVs10Days: "vs 10-Day Setup"
     }
   },
   ar: {
@@ -323,6 +330,13 @@ export const translations: Record<Language, any> = {
       phone: "الهاتف",
       location: "الموقع",
       visakhapatnam: "فيساخاباتنام، الهند"
+    },
+    stats: {
+      yearsExp: "سنوات خبرة",
+      enterpriseProjects: "مشاريع مؤسسية",
+      banksServed: "بنوك خدمناها",
+      setupReduction: "تقليص وقت الإعداد",
+      setupVs10Days: "مقابل إعداد 10 أيام"
     }
   }
 };

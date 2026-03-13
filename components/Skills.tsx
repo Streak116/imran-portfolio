@@ -26,7 +26,7 @@ import {
   SiBootstrap
 } from "react-icons/si";
 import { FaJava, FaDatabase } from "react-icons/fa";
-import { Brain, Code2, Workflow } from "lucide-react";
+import { Brain, Code2, Workflow, Blocks } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -86,6 +86,7 @@ export default function Skills() {
       skills: [
         { name: "RAG Systems", icon: Brain, color: "#8B5CF6" },
         { name: "Semantic Search", icon: Code2, color: "#EC4899" },
+        { name: "LCNC Platforms", icon: Blocks, color: "#F97316" },
       ],
     },
     {
