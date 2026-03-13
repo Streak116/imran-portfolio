@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from "react-icons/fa";
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFramer } from "react-icons/si";
+import { useLanguage } from "./LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
@@ -31,9 +33,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-gray-50 via-purple-50 to-pink-50 dark:from-gray-950 dark:via-gray-900 dark:to-black border-t border-gray-200/50 dark:border-gray-800/50">
+    <footer className="relative bg-gradient-to-br from-gray-50 via-blue-50 to-teal-50 dark:from-gray-950 dark:via-gray-900 dark:to-black border-t border-gray-200/50 dark:border-gray-800/50">
       {/* Decorative gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-purple-500/5 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-indigo-500/5 pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-12">
         {/* Main Footer Content */}
@@ -45,11 +47,11 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Mohammed Imran
+            <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-blue-700 via-indigo-600 to-teal-500 bg-clip-text text-transparent">
+              {t("footer.name")}
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-              Full Stack Developer passionate about building scalable applications and exploring AI-powered systems.
+              {t("footer.bio")}
             </p>
           </motion.div>
 
@@ -60,15 +62,15 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-white">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-white">{t("footer.quickLinks")}</h3>
             <ul className="grid grid-cols-2 gap-2">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm"
+                    className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-sm"
                   >
-                    {link.name}
+                    {t(`nav.${link.name.toLowerCase()}`)}
                   </a>
                 </li>
               ))}
@@ -82,7 +84,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-white">Connect</h3>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-white">{t("footer.connect")}</h3>
             <div className="flex gap-3 mb-4">
               {socialLinks.map((social) => (
                 <motion.a
@@ -92,7 +94,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 shadow-lg hover:shadow-xl transition-all"
+                  className="w-10 h-10 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 shadow-lg hover:shadow-xl transition-all"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -115,7 +117,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="flex items-center gap-2 flex-wrap justify-center md:justify-start"
           >
-            <span className="text-sm text-gray-600 dark:text-gray-400">Built with</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400">{t("footer.builtWith")}</span>
             {techStack.map((tech, index) => (
               <motion.div
                 key={tech.name}
@@ -140,7 +142,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1"
           >
-            © {currentYear} Made with <FaHeart className="text-red-500 animate-pulse" /> by Mohammed Imran
+            © {currentYear} {t("footer.madeWith")} <FaHeart className="text-red-500 animate-pulse" /> by {t("footer.name")}
           </motion.p>
         </div>
       </div>

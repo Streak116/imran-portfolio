@@ -3,24 +3,28 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { FaLinkedin, FaGithub, FaDownload } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaDownload, FaWhatsapp } from "react-icons/fa";
 import { Sparkles, Code2, Rocket } from "lucide-react";
+import { useLanguage } from "./LanguageContext";
 
 const details = {
   name: "Mohammed Imran",
-  title: "Full Stack Developer",
+  title: "Full Stack & Platform Engineer",
   profileImage: "/profile.jpg",
   taglines: [
-    "Building scalable, user-centric applications 🚀",
-    "Specialized in React, Next.js, Angular, NestJS ⚡",
+    "Building scalable enterprise applications 🚀",
+    "Workflow automation & LCNC builder ⚙️",
     "Exploring AI & LLM-powered systems 🤖",
+    "Open to relocation: UAE, Qatar & KSA ✈️",
   ],
-  resumeLink: process.env.NEXT_PUBLIC_RESUME_URL || "/Resume Imran.pdf",
+  resumeLink: process.env.NEXT_PUBLIC_RESUME_URL || "/Imran_Full_Stack_Developer.pdf",
   linkedIn: "https://www.linkedin.com/in/md-116-imran",
   github: "https://github.com/Streak116",
+  whatsapp: "https://wa.me/918985438536",
 };
 
 export default function About() {
+  const { t } = useLanguage();
   return (
     <section
       id="about"
@@ -57,7 +61,7 @@ export default function About() {
         >
           <div className="relative">
             {/* Gradient ring */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-md opacity-75 animate-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-indigo-600 to-teal-500 rounded-full blur-md opacity-75 animate-pulse" />
             
             {/* Profile image */}
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
@@ -74,7 +78,7 @@ export default function About() {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full p-3 shadow-lg"
+              className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-600 to-teal-500 rounded-full p-3 shadow-lg"
             >
               <Sparkles className="w-6 h-6 text-white" />
             </motion.div>
@@ -95,9 +99,9 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-3 bg-gradient-to-r from-blue-700 via-indigo-600 to-teal-500 dark:from-blue-400 dark:via-indigo-400 dark:to-teal-300 bg-clip-text text-transparent"
           >
-            {details.name}
+            {t("hero.name")}
           </motion.h1>
 
           {/* Title with enhanced styling */}
@@ -108,7 +112,7 @@ export default function About() {
             viewport={{ once: true }}
             className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700 dark:text-gray-300"
           >
-            <span className="text-purple-600 dark:text-purple-400">{details.title}</span>
+            <span className="text-indigo-600 dark:text-indigo-400">{t("hero.title")}</span>
           </motion.h2>
 
           {/* Typewriter Tagline with better styling */}
@@ -120,7 +124,8 @@ export default function About() {
             className="mb-8"
           >
             <TypeAnimation
-              sequence={details.taglines.flatMap((tagline) => [tagline, 2000])}
+              key={t("hero.taglines")[0]} // Redraw when language changes to prevent typeanimation cache
+              sequence={Array.isArray(t("hero.taglines")) ? t("hero.taglines").flatMap((tagline: string) => [tagline, 2000]) : []}
               wrapper="span"
               speed={50}
               repeat={Infinity}
@@ -143,17 +148,33 @@ export default function About() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold overflow-hidden"
+              className="group relative px-8 py-4 bg-gradient-to-r from-blue-700 via-indigo-600 to-teal-500 text-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <FaDownload className="group-hover:animate-bounce" />
-                Download Resume
+                {t("hero.downloadResume")}
               </span>
               {/* Shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
             </motion.a>
 
             {/* Secondary CTAs */}
+            <motion.a
+              href={details.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative px-8 py-4 bg-[#25D366] text-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                <FaWhatsapp className="group-hover:scale-110 transition-transform text-xl" />
+                {t("hero.whatsapp")}
+              </span>
+              {/* Shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+            </motion.a>
+
             <motion.a
               href={details.linkedIn}
               target="_blank"
@@ -163,7 +184,7 @@ export default function About() {
               className="flex items-center gap-2 px-8 py-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold text-gray-700 dark:text-gray-300"
             >
               <FaLinkedin className="text-blue-600" />
-              LinkedIn
+              {t("hero.linkedin")}
             </motion.a>
 
             <motion.a
@@ -175,7 +196,7 @@ export default function About() {
               className="flex items-center gap-2 px-8 py-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold text-gray-700 dark:text-gray-300"
             >
               <FaGithub className="text-gray-800 dark:text-white" />
-              GitHub
+              {t("hero.github")}
             </motion.a>
           </motion.div>
         </motion.div>
@@ -188,7 +209,7 @@ export default function About() {
         transition={{ duration: 2, repeat: Infinity }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">Scroll Down</span>
+        <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">{t("hero.scrollDown")}</span>
         <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
           <motion.div
             animate={{ y: [0, 12, 0] }}

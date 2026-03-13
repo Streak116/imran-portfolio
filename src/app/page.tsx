@@ -11,10 +11,10 @@ export default function Home() {
     <>
       <div>
         <section id="about"><Hero /></section>
-        <section id="education"><Education /></section>
         <section id="work"><Work /></section>
-        <section id="skills"><Skills /></section>
         <section id="projects"><Projects /></section>
+        <section id="skills"><Skills /></section>
+        <section id="education"><Education /></section>
         <section id="contact"><Contact /></section>
       </div>
       <ScrollToTop />

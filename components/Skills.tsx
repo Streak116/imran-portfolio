@@ -19,75 +19,97 @@ import {
   SiAmazon,
   SiExpress,
   SiDjango,
-  SiGithub
+  SiGithub,
+  SiVercel,
+  SiRailway,
+  SiTailwindcss,
+  SiBootstrap
 } from "react-icons/si";
 import { FaJava, FaDatabase } from "react-icons/fa";
 import { Brain, Code2, Workflow } from "lucide-react";
+import { useLanguage } from "./LanguageContext";
 
-const skillCategories = [
-  {
-    category: "Programming Languages",
-    gradient: "from-blue-500 via-indigo-500 to-purple-500",
-    skills: [
-      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-      { name: "Java", icon: FaJava, color: "#007396" },
-      { name: "Python", icon: SiPython, color: "#3776AB" },
-      { name: "SQL", icon: FaDatabase, color: "#4479A1" },
-    ],
-  },
-  {
-    category: "Frontend Development",
-    gradient: "from-cyan-500 via-blue-500 to-purple-500",
-    skills: [
-      { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
-      { name: "Angular", icon: SiAngular, color: "#DD0031" },
-      { name: "Redux", icon: SiRedux, color: "#764ABC" },
-      { name: "React Flow", icon: Workflow, color: "#FF6B9D" },
-    ],
-  },
-  {
-    category: "Backend Development",
-    gradient: "from-green-500 via-emerald-500 to-teal-500",
-    skills: [
-      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-      { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
-      { name: "Express.js", icon: SiExpress, color: "#000000" },
-      { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
-      { name: "Django", icon: SiDjango, color: "#092E20" },
-    ],
-  },
-  {
-    category: "AI & Intelligent Systems",
-    gradient: "from-violet-500 via-fuchsia-500 to-pink-500",
-    skills: [
-      { name: "RAG Systems", icon: Brain, color: "#8B5CF6" },
-      { name: "Semantic Search", icon: Code2, color: "#EC4899" },
-    ],
-  },
-  {
-    category: "Databases",
-    gradient: "from-orange-500 via-amber-500 to-yellow-500",
-    skills: [
-      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
-      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-    ],
-  },
-  {
-    category: "Tools & Platforms",
-    gradient: "from-red-500 via-rose-500 to-pink-500",
-    skills: [
-      { name: "Git", icon: SiGit, color: "#F05032" },
-      { name: "GitHub", icon: SiGithub, color: "#181717" },
-      { name: "Docker", icon: SiDocker, color: "#2496ED" },
-      { name: "AWS", icon: SiAmazon, color: "#FF9900" },
-    ],
-  },
-];
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const VercelIconWrapper = (props: any) => {
+  return (
+    <div
+      className="w-10 h-10 md:w-12 md:h-12 bg-black rounded-full flex items-center justify-center shadow-sm border border-gray-800 flex-shrink-0"
+    >
+      <SiVercel className="w-5 h-5 md:w-6 md:h-6 text-white" />
+    </div>
+  );
+};
 
 export default function Skills() {
+  const { t } = useLanguage();
+  const tCat = t("skillCategories");
+
+  const skillCategories = [
+    {
+      category: tCat.languages,
+      gradient: "from-blue-500 via-indigo-500 to-purple-500",
+      skills: [
+        { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+        { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+        { name: "Java", icon: FaJava, color: "#007396" },
+        { name: "Python", icon: SiPython, color: "#3776AB" },
+        { name: "SQL", icon: FaDatabase, color: "#4479A1" },
+      ],
+    },
+    {
+      category: tCat.frontend,
+      gradient: "from-cyan-500 via-blue-500 to-purple-500",
+      skills: [
+        { name: "React", icon: SiReact, color: "#61DAFB" },
+        { name: "Next.js", icon: SiNextdotjs },
+        { name: "Angular", icon: SiAngular, color: "#DD0031" },
+        { name: "Redux", icon: SiRedux, color: "#764ABC" },
+        { name: "React Flow", icon: Workflow, color: "#FF6B9D" },
+        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+        { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3" },
+      ],
+    },
+    {
+      category: tCat.backend,
+      gradient: "from-green-500 via-emerald-500 to-teal-500",
+      skills: [
+        { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+        { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
+        { name: "Express.js", icon: SiExpress },
+        { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
+        { name: "Django", icon: SiDjango, color: "#44B78B" },
+      ],
+    },
+    {
+      category: tCat.ai,
+      gradient: "from-violet-500 via-fuchsia-500 to-pink-500",
+      skills: [
+        { name: "RAG Systems", icon: Brain, color: "#8B5CF6" },
+        { name: "Semantic Search", icon: Code2, color: "#EC4899" },
+      ],
+    },
+    {
+      category: tCat.db,
+      gradient: "from-orange-500 via-amber-500 to-yellow-500",
+      skills: [
+        { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      ],
+    },
+    {
+      category: tCat.tools,
+      gradient: "from-blue-600 via-indigo-600 to-teal-500",
+      skills: [
+        { name: "Git", icon: SiGit, color: "#F05032" },
+        { name: "GitHub", icon: SiGithub },
+        { name: "Docker", icon: SiDocker, color: "#2496ED" },
+        { name: "AWS", icon: SiAmazon, color: "#FF9900" },
+        { name: "Vercel", icon: VercelIconWrapper },
+        { name: "Railway", icon: SiRailway },
+      ],
+    },
+  ];
+
   return (
     <section className="min-h-screen px-6 py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-black">
       <div className="max-w-7xl mx-auto">
@@ -99,11 +121,11 @@ export default function Skills() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Technical Skills
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-700 via-indigo-600 to-teal-500 bg-clip-text text-transparent">
+            {t("skills.title")}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
-            Technologies I work with to build exceptional applications
+            {t("skills.subtitle")}
           </p>
         </motion.div>
 
@@ -158,13 +180,13 @@ export default function Skills() {
                           {/* Icon */}
                           <div className="relative">
                             <Icon 
-                              className="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110" 
+                              className="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110 text-gray-800 dark:text-gray-100" 
                               style={{ color: skill.color }}
                             />
                             {/* Icon Glow */}
                             <div 
                               className="absolute inset-0 blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"
-                              style={{ backgroundColor: skill.color }}
+                              style={{ backgroundColor: skill.color || '#9ca3af' }}
                             />
                           </div>
 
@@ -199,7 +221,7 @@ export default function Skills() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"
+            className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-indigo-400/10 to-teal-400/10 rounded-full blur-3xl"
           />
           <motion.div
             animate={{
@@ -211,7 +233,7 @@ export default function Skills() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute bottom-20 left-10 w-40 h-40 bg-gradient-to-br from-pink-400/10 to-orange-400/10 rounded-full blur-3xl"
+            className="absolute bottom-20 left-10 w-40 h-40 bg-gradient-to-br from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"
           />
         </div>
       </div>

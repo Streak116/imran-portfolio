@@ -2,36 +2,16 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-
-const contactInfo = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "md116imran@gmail.com",
-    href: "mailto:md116imran@gmail.com",
-    color: "#3B82F6",
-    gradient: "from-blue-500 to-cyan-500",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+91 8985438536",
-    href: "tel:+918985438536",
-    color: "#10B981",
-    gradient: "from-green-500 to-emerald-500",
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "Visakhapatnam, India",
-    href: null,
-    color: "#F59E0B",
-    gradient: "from-orange-500 to-amber-500",
-  },
-];
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { useLanguage } from "./LanguageContext";
 
 const socialLinks = [
+  {
+    icon: FaWhatsapp,
+    label: "WhatsApp",
+    href: "https://wa.me/918985438536",
+    color: "#25D366",
+  },
   {
     icon: FaGithub,
     label: "GitHub",
@@ -47,8 +27,38 @@ const socialLinks = [
 ];
 
 export default function Contact() {
+  const { t } = useLanguage();
+  const tCont = t("contactItems");
+
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: tCont.email,
+      value: "md116imran@gmail.com",
+      href: "mailto:md116imran@gmail.com",
+      color: "#3B82F6",
+      gradient: "from-blue-500 to-cyan-500",
+    },
+    {
+      icon: Phone,
+      label: tCont.phone,
+      value: "+91 8985438536",
+      href: "tel:+918985438536",
+      color: "#10B981",
+      gradient: "from-green-500 to-emerald-500",
+    },
+    {
+      icon: MapPin,
+      label: tCont.location,
+      value: tCont.visakhapatnam,
+      href: null,
+      color: "#F59E0B",
+      gradient: "from-orange-500 to-amber-500",
+    },
+  ];
+
   return (
-    <section className="min-h-screen px-6 py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-black">
+    <section className="min-h-screen px-6 py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-teal-50 dark:from-gray-950 dark:via-gray-900 dark:to-black">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -58,11 +68,11 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
-            Let&apos;s Connect
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-700 via-indigo-600 to-teal-500 bg-clip-text text-transparent">
+            {t("contact.title")}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-            Have a project in mind or just want to chat? Feel free to reach out through any of these channels.
+            {t("contact.subtitle")}
           </p>
         </motion.div>
 
@@ -141,7 +151,7 @@ export default function Contact() {
           className="text-center"
         >
           <h3 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
-            Follow Me
+            {t("contact.followMe")}
           </h3>
           <div className="flex justify-center gap-4">
             {socialLinks.map((social, index) => {
@@ -189,7 +199,7 @@ export default function Contact() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"
+            className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-indigo-400/10 to-teal-400/10 rounded-full blur-3xl"
           />
           <motion.div
             animate={{
@@ -201,7 +211,7 @@ export default function Contact() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute bottom-20 left-10 w-40 h-40 bg-gradient-to-br from-pink-400/10 to-orange-400/10 rounded-full blur-3xl"
+            className="absolute bottom-20 left-10 w-40 h-40 bg-gradient-to-br from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"
           />
         </div>
       </div>

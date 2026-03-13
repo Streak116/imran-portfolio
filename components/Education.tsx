@@ -2,27 +2,24 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { GraduationCap } from "lucide-react";
-
-const timeline = [
-  {
-    degree: "Bachelor of Technology (B.Tech), Computer Science",
-    school: "Maharaja Vijayaram Gajapathi Raj College of Engineering",
-    year: "2020 – 2023",
-    location: "Visakhapatnam, India",
-    logo: "/mvgr-logo.jpg",
-  },
-  {
-    degree: "Diploma, Computer Engineering",
-    school: "Sankethika Polytechnic College",
-    year: "2017 – 2020",
-    location: "India",
-    logo: "/sankethika.webp",
-  },
-];
+import { useLanguage } from "./LanguageContext";
 
 export default function EducationTimeline() {
+  const { t } = useLanguage();
+
+  const timeline = [
+    {
+      ...t("educationItems.btech"),
+      logo: "/mvgr-logo.jpg",
+    },
+    {
+      ...t("educationItems.diploma"),
+      logo: "/sankethika.webp",
+    },
+  ];
+
   return (
-    <section className="relative min-h-screen py-20 bg-gradient-to-br from-gray-50 via-purple-50 to-pink-50 dark:from-gray-950 dark:via-gray-900 dark:to-black">
+    <section className="relative min-h-screen py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-teal-50 dark:from-gray-950 dark:via-gray-900 dark:to-black">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -32,17 +29,17 @@ export default function EducationTimeline() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Education
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-700 via-indigo-600 to-teal-500 bg-clip-text text-transparent">
+            {t("education.title")}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-            Academic journey in computer science and engineering
+            {t("education.subtitle")}
           </p>
         </motion.div>
 
         <div className="relative max-w-5xl mx-auto">
           {/* Vertical timeline line */}
-          <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 opacity-30"></div>
+          <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-gradient-to-b from-blue-600 via-indigo-600 to-teal-500 opacity-30"></div>
 
           <div className="space-y-16">
             {timeline.map((item, index) => (
@@ -62,7 +59,7 @@ export default function EducationTimeline() {
                   viewport={{ once: true }}
                   className="absolute left-1/2 -translate-x-1/2 z-10"
                 >
-                  <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 w-12 h-12 rounded-full flex items-center justify-center shadow-xl shadow-purple-500/30">
+                  <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 w-12 h-12 rounded-full flex items-center justify-center shadow-xl shadow-indigo-500/30">
                     <GraduationCap className="w-6 h-6 text-white" />
                   </div>
                 </motion.div>
@@ -78,7 +75,7 @@ export default function EducationTimeline() {
                 }`}
                 >
                   {/* Gradient glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 rounded-3xl" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-teal-500/5 rounded-3xl" />
 
                   {/* Arrow pointing toward timeline */}
                   <div
@@ -110,7 +107,7 @@ export default function EducationTimeline() {
                       </div>
                     </div>
 
-                    <p className="text-purple-600 dark:text-purple-400 font-medium mb-2">
+                    <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-2">
                       {item.school}
                     </p>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -119,7 +116,7 @@ export default function EducationTimeline() {
                   </div>
 
                   {/* Decorative corner accent */}
-                  <div className={`absolute ${index % 2 === 0 ? 'top-0 right-0' : 'top-0 left-0'} w-24 h-24 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-2xl`} />
+                  <div className={`absolute ${index % 2 === 0 ? 'top-0 right-0' : 'top-0 left-0'} w-24 h-24 bg-gradient-to-br from-indigo-500/10 to-teal-500/10 rounded-full blur-2xl`} />
                 </motion.div>
               </motion.div>
             ))}

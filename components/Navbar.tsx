@@ -2,18 +2,20 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "./LanguageContext";
 // import ThemeToggle from "./ThemeToggle";
 
 const sections = [
   "About",
-  "Education",
   "Work",
-  "Skills",
   "Projects",
+  "Skills",
+  "Education",
   "Contact",
 ];
 
 export default function Navbar() {
+  const { language, toggleLanguage, t } = useLanguage();
   const [active, setActive] = useState("About");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -67,10 +69,10 @@ export default function Navbar() {
           {/* Logo */}
           <motion.h1
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent cursor-pointer"
+            className="text-2xl font-bold bg-gradient-to-r from-blue-700 via-indigo-600 to-teal-500 bg-clip-text text-transparent cursor-pointer"
             onClick={() => handleClick("About")}
           >
-            Imran
+            {t("nav.logo")}
           </motion.h1>
 
           {/* Desktop Navigation */}
@@ -86,18 +88,18 @@ export default function Navbar() {
                   <span
                     className={`text-sm font-medium transition-colors ${
                       active === section
-                        ? "text-purple-600 dark:text-purple-400"
-                        : "text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400"
+                        ? "text-indigo-600 dark:text-indigo-400"
+                        : "text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
                     }`}
                   >
-                    {section}
+                    {t(`nav.${section.toLowerCase()}`)}
                   </span>
 
                   {/* Active indicator - gradient underline */}
                   {active === section && (
                     <motion.div
                       layoutId="activeSection"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-700 via-indigo-600 to-teal-500 rounded-full"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -110,6 +112,34 @@ export default function Navbar() {
             
             {/* Theme Toggle */}
             {/* <ThemeToggle /> */}
+            
+            {/* RTL Toggle */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={toggleLanguage}
+              className="ml-2 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              aria-label="Toggle language"
+            >
+              {language === "en" ? "ع" : "En"}
+            </motion.button>
+            <AnimatePresence>
+              {active !== "About" && (
+                <motion.a
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  href={process.env.NEXT_PUBLIC_RESUME_URL || "/Imran_Full_Stack_Developer.pdf"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="ml-4 px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-700 via-indigo-600 to-teal-500 text-white font-medium text-sm shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
+                >
+                  {t("nav.downloadCV")}
+                </motion.a>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Mobile Menu Button */}
@@ -154,16 +184,52 @@ export default function Navbar() {
                     <span
                       className={`text-sm font-medium ${
                         active === section
-                          ? "text-purple-600 dark:text-purple-400"
+                          ? "text-indigo-600 dark:text-indigo-400"
                           : "text-gray-700 dark:text-gray-300"
                       }`}
                     >
-                      {section}
+                      {t(`nav.${section.toLowerCase()}`)}
                     </span>
                   </motion.li>
                 ))}
               </ul>
               
+              {/* Mobile CTA */}
+              <AnimatePresence>
+                {active !== "About" && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="px-4 pb-4 mt-2 overflow-hidden"
+                  >
+                    <motion.a
+                      href={process.env.NEXT_PUBLIC_RESUME_URL || "/Resume Imran.pdf"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="block w-full text-center px-4 py-3 rounded-xl bg-gradient-to-r from-blue-700 via-indigo-600 to-teal-500 text-white font-semibold shadow-lg hover:shadow-xl transition-all"
+                    >
+                      {t("nav.downloadCV")}
+                    </motion.a>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Mobile RTL Toggle */}
+              <div className="px-4 pb-4 mt-2">
+                <div className="flex items-center justify-between px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800/50">
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{t("nav.layoutDir")}</span>
+                  <button
+                    onClick={toggleLanguage}
+                    className="px-3 py-1 rounded-md bg-white dark:bg-gray-700 shadow-sm text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600"
+                  >
+                    {language === "en" ? t("nav.arabic") : t("nav.english")}
+                  </button>
+                </div>
+              </div>
+
               {/* Mobile Theme Toggle */}
               {/* <div className="px-4 pb-4">
                 <div className="flex items-center justify-between px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800/50">

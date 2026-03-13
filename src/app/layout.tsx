@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/../components/Navbar";
 import Footer from "@/../components/Footer";
 import { ThemeProvider } from "@/../components/ThemeProvider";
+import { LanguageProvider } from "@/../components/LanguageContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const robotoMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Mohammed Imran — Full Stack Developer",
-  description: "Portfolio — MERN stack, Projects, Resume",
+  title: "Mohammed Imran — Full Stack & Platform Engineer",
+  description: "Portfolio of Mohammed Imran, Full Stack Developer & Platform Engineer specializing in React, Node.js, Next.js, and Enterprise LCNC Platforms. Open to roles in UAE, KSA, Qatar.",
+  keywords: ["React Developer UAE", "Node.js Engineer Dubai", "Full Stack Developer KSA", "Next.js", "Platform Engineering"],
 };
 
 export default function RootLayout({
@@ -28,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${robotoMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -36,9 +38,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main className="pt-16">{children}</main>
-          <Footer />
+          <LanguageProvider>
+            <Navbar />
+            <main className="pt-16">{children}</main>
+            <Footer />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
