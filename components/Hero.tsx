@@ -9,12 +9,13 @@ import { useLanguage } from "./LanguageContext";
 
 const details = {
   name: "Mohammed Imran",
-  title: "Full Stack & Platform Engineer",
+  title: "Platform Engineer & Workflow Expert",
   profileImage: "/profile.jpg",
   taglines: [
-    "Building scalable enterprise applications 🚀",
-    "Workflow automation & LCNC builder ⚙️",
-    "Exploring AI & LLM-powered systems 🤖",
+    "Architecting enterprise low-code/no-code platforms ⚙️",
+    "Building scalable workflow orchestration systems 🧩",
+    "Developing AI & LLM-powered backends 🤖",
+    "Streamlining full-stack application delivery 🚀",
     // "Open to relocation: UAE, Qatar & KSA ✈️",
   ],
   resumeLink: process.env.NEXT_PUBLIC_RESUME_URL || "/Imran_Full_Stack_Developer.pdf",
@@ -23,7 +24,7 @@ const details = {
   whatsapp: "https://wa.me/918985438536",
 };
 
-export default function About() {
+export default function Hero() {
   const { t } = useLanguage();
   return (
     <section

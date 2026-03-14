@@ -34,9 +34,10 @@ export const translations: Record<Language, any> = {
       name: "Mohammed Imran",
       title: "Full Stack & Platform Engineer",
       taglines: [
-        "Building scalable enterprise applications 🚀",
-        "Workflow automation & LCNC builder ⚙️",
-        "Exploring AI & LLM-powered systems 🤖",
+        "Architecting enterprise low-code/no-code platforms ⚙️",
+        "Building scalable workflow orchestration systems 🧩",
+        "Developing AI & LLM-powered backends 🤖",
+        "Streamlining full-stack application delivery 🚀",
         // "Open to relocation: UAE, Qatar & KSA ✈️",
       ],
       downloadResume: "Download Resume",
@@ -44,7 +45,7 @@ export const translations: Record<Language, any> = {
       linkedin: "LinkedIn",
       github: "GitHub",
       scrollDown: "Scroll Down",
-      valueStatement: "Full-Stack Engineer building scalable React & Node.js platforms, enterprise automation systems, and AI-powered applications."
+      valueStatement: "Full-Stack Engineer specializing in building scalable enterprise systems, automated workflows, and low-code/no-code orchestration tools using React, Node.js, and Java."
     },
     about: {
       heading: "About Me",
@@ -65,7 +66,10 @@ export const translations: Record<Language, any> = {
       viewSourceCode: "View Source Code",
       liveDemo: "Live Demo",
       visualsComingSoon: "Case Study Visuals Coming Soon",
-      mockupInfo: "Application Interface Mockup"
+      mockupInfo: "Application Interface Mockup",
+      moreProjectsTitle: "More Projects",
+      moreProjectsDesc: "Explore more of my work, experiments, and contributions on GitHub.",
+      viewOnGithub: "View on GitHub"
     },
     skills: {
       title: "Technical Skills",
@@ -95,12 +99,12 @@ export const translations: Record<Language, any> = {
         duration: "Aug 2023 – Present",
         location: "Visakhapatnam, India",
         details: [
-          "Reduced enterprise application setup time from ~10 days to under 1 hour by developing automated Excel-to-JSON configuration pipelines.",
-          "Engineered a visual flow-based orchestration system using React Flow, reducing setup complexity for enterprise workflows by 40–70%.",
-          "Contributed to an enterprise low-code/no-code (LCNC) platform enabling rapid delivery of CRM and LOS applications.",
-          "Developed enterprise PoCs for major clients including HDFC Bank and GXS Bank (Singapore), directly positioning the platform for enterprise adoption.",
-          "Redesigned and migrated legacy backend modules from Spring Boot to Node.js (NestJS), streamlining authentication workflows and boosting maintainability.",
-          "Built configurable event-action frameworks in React and Redux, mapping complex UI events to backend database operations and API calls.",
+          "Reduced configuration setup time from 10 days to under 1 hour by developing automated Excel-to-JSON pipelines.",
+          "Built a workflow orchestration system using React Flow, reducing enterprise setup complexity by 40–70%.",
+          "Migrated legacy backend modules from Spring Boot to Node.js (NestJS), streamlining authentication and boosting maintainability.",
+          "Engineered an enterprise low-code/no-code (LCNC) platform enabling rapid delivery of custom CRM and LOS applications.",
+          "Delivered enterprise PoCs for major clients (HDFC Bank, GXS Bank Singapore), driving platform adoption and sales.",
+          "Developed configurable event-action frameworks using React and Redux to map complex UI events to backend operations.",
         ]
       },
       pennant_intern: {
@@ -202,23 +206,24 @@ export const translations: Record<Language, any> = {
     },
     hero: {
       name: "محمد عمران",
-      title: "مهندس برمجيات و أنظمة منصات",
+      title: "مهندس برمجيات شامل ومنصات",
       taglines: [
-        "بناء تطبيقات مؤسسية قابلة للتوسع 🚀",
-        "أتمتة سير العمل و بناء منصات LCNC ⚙️",
-        "استكشاف أنظمة الذكاء الاصطناعي 🤖",
-        "مستعد للانتقال: الإمارات، قطر، السعودية ✈️",
+        "هندسة منصات مؤسسية منخفضة/عديمة الكود ⚙️",
+        "بناء أنظمة تنسيق سير العمل القابلة للتوسع 🧩",
+        "تطوير واجهات خلفية مدعومة بالذكاء الاصطناعي 🤖",
+        "تبسيط وتسريع تسليم التطبيقات الشاملة 🚀",
+        // "Open to relocation: UAE, Qatar & KSA ✈️",
       ],
       downloadResume: "تحميل السيرة الذاتية",
       whatsapp: "واتس آب",
       linkedin: "لينكد إن",
       github: "جيت هب",
       scrollDown: "تمرير لأسفل",
-      valueStatement: "مهندس برمجيات شامل يبني منصات React & Node.js قابلة للتوسع، وأنظمة أتمتة مؤسسية، وتطبيقات مدعومة بالذكاء الاصطناعي."
+      valueStatement: "مهندس برمجيات شامل متخصص في بناء أنظمة مؤسسية قابلة للتوسع، وسير عمل مؤتمت، وأدوات البرمجة المنخفضة/عديمة الكود باستخدام React و Node.js و Java."
     },
     about: {
       heading: "نبذة عني",
-      summary: "أنا مهندس برمجيات شامل بخبرة تزيد على 3 سنوات في بناء منصات مؤسسية وأنظمة أتمتة سير العمل وحلول البرمجة المنخفضة وعديمة الكود. أعمل عبر المكدس الكامل — من بناء واجهات React وAngular نظيفة وعالية الأداء، إلى تصميم واجهات برمجية خلفية قابلة للتوسع باستخدام Node.js وإطارات Java. مؤخراً، أدمجت ميزات مدعومة بالذكاء الاصطناعي مثل نظام RAG والبحث الدلالي في تطبيقات حقيقية. أستمتع بحل مشكلات هندسية معقدة، والتعاون مع الفرق، وبناء برمجيات سليمة تقنياً ومفيدة فعلياً. عملت مع عملاء مصرفيين كبار من بينهم HDFC Bank وGXS Bank.",
+      summary: "أنا مهندس برمجيات شامل بخبرة تزيد على 3 سنوات في بناء منصات مؤسسية وأنظمة أتمتة سير العمل وحلول البرمجة المنخفضة وعديمة الكود. أعمل عبر المكدس الكامل — من بناء واجهات React وAngular نظيفة وعالية الأداء، إلى تصميم واجهات برمجية خلفية قابلة للتوسع باستخدام Node.js وإطارات Java-based. مؤخراً، أدمجت ميزات مدعومة بالذكاء الاصطناعي مثل نظام RAG والبحث الدلالي في تطبيقات حقيقية. أستمتع بحل مشكلات هندسية معقدة، والتعاون مع الفرق، وبناء برمجيات سليمة تقنياً ومفيدة فعلياً. حظيت بفرصة العمل مع عملاء مصرفيين كبار من بينهم HDFC Bank وGXS Bank.",
       highlight1: "+3 سنوات في Pennant Technologies",
       highlight2: "مهندس برمجيات شامل ومنصات",
       highlight3: "مستعد للانتقال — الإمارات، قطر، السعودية"
@@ -235,7 +240,10 @@ export const translations: Record<Language, any> = {
       viewSourceCode: "عرض الكود المصدري",
       liveDemo: "عرض تجريبي",
       visualsComingSoon: "الصور ستتوفر قريباً",
-      mockupInfo: "نموذج واجهة التطبيق"
+      mockupInfo: "نموذج واجهة التطبيق",
+      moreProjectsTitle: "مشاريع إضافية",
+      moreProjectsDesc: "استكشف المزيد من أعمالي وتجاربي ومساهماتي على جيت هب.",
+      viewOnGithub: "عرض على GitHub"
     },
     skills: {
       title: "المهارات التقنية",
@@ -265,12 +273,12 @@ export const translations: Record<Language, any> = {
         duration: "أغسطس 2023 - الحاضر",
         location: "فيساخاباتنام، الهند",
         details: [
-          "تقليص وقت إعداد تطبيقات المؤسسات من 10 أيام إلى أقل من ساعة واحدة من خلال تطوير مسارات تكوين آلية.",
-          "هندسة نظام تنسيق مرئي قائم على التدفق باستخدام React Flow، مما قلل من تعقيد الإعداد بنسبة 40-70٪.",
-          "المساهمة في منصة LCNC للمؤسسات لتمكين التسليم السريع لتطبيقات إدارة علاقات العملاء.",
-          "تطوير نماذج إثبات المفهوم لعملاء رئيسيين مثل HDFC Bank و GXS Bank، مما مهد الطريق لاعتماد المنصة.",
-          "إعادة تصميم وترحيل وحدات النهاية الخلفية القديمة من Spring Boot إلى Node.js (NestJS).",
-          "بناء أطر عمل للإجراءات والأحداث قابلة للتكوين في React و Redux."
+          "تقليص وقت إعداد التكوين من 10 أيام إلى أقل من ساعة واحدة عبر تطوير مسارات مؤتمتة من Excel إلى JSON.",
+          "بناء نظام تنسيق سير العمل باستخدام React Flow، مما قلل تعقيد الإعداد بنسبة 40-70%.",
+          "ترحيل وحدات النهاية الخلفية القديمة من Spring Boot إلى Node.js (NestJS)، لتبسيط المصادقة وزيادة الاستدامة.",
+          "هندسة منصة مؤسسية منخفضة الكود/بدون كود (LCNC) تتيح تقديماً سريعاً لتطبيقات CRM و LOS.",
+          "تسليم نماذج إثبات المفهوم لعملاء رئيسيين (HDFC Bank، GXS Bank)، مما دفع باعتماد المنصة وزيادة المبيعات.",
+          "تطوير إطارات عمل للإجراءات والأحداث قابلة للتكوين في React و Redux لربط واجهة المستخدم بقاعدة البيانات.",
         ]
       },
       pennant_intern: {

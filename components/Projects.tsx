@@ -88,7 +88,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-700 via-indigo-600 to-teal-500 bg-clip-text text-transparent">
             {t("projects.title")}
@@ -110,7 +110,11 @@ export default function Projects() {
               className="group relative"
             >
               {/* Case Study Card */}
-              <div className="relative p-8 lg:p-12 rounded-3xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+              <motion.div 
+                whileHover={{ y: -8 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="relative p-8 lg:p-12 rounded-3xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden"
+              >
                 {/* Gradient Glow Effect */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                 
@@ -147,26 +151,26 @@ export default function Projects() {
                       {t("projects.techStack")}
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                      {project.techStack.map((tech) => {
-                        const Icon = tech.icon;
-                        return (
-                          <motion.div
-                            key={tech.name}
-                            whileHover={{ scale: 1.1, y: -2 }}
-                            className="group/badge relative"
-                          >
-                            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100/80 dark:bg-gray-700/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50 transition-all duration-300 hover:shadow-md">
-                              <Icon 
-                                className="w-4 h-4 transition-transform duration-300 group-hover/badge:scale-110" 
-                                style={{ color: tech.color }}
-                              />
-                              <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
-                                {tech.name}
-                              </span>
-                            </div>
-                          </motion.div>
-                        );
-                      })}
+                       {project.techStack.map((tech) => {
+                         const Icon = tech.icon;
+                         return (
+                           <motion.div
+                             key={tech.name}
+                             whileHover={{ scale: 1.1, y: -2 }}
+                             className="group/badge relative"
+                           >
+                             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100/80 dark:bg-gray-700/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50 transition-all duration-300 hover:shadow-md">
+                               <Icon 
+                                 className="w-4 h-4 transition-transform duration-300 group-hover/badge:scale-110" 
+                                 style={{ color: tech.color }}
+                               />
+                               <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                                 {tech.name}
+                               </span>
+                             </div>
+                           </motion.div>
+                         );
+                       })}
                     </div>
                   </div>
 
@@ -190,36 +194,36 @@ export default function Projects() {
                     </div>
                   </div>
 
-                    {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-4 mt-8">
-                      {project.githubUrl && (
-                        <motion.a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-900 dark:bg-gray-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300"
-                        >
-                          <Github className="w-5 h-5" />
-                          {t("projects.viewSourceCode")}
-                        </motion.a>
-                      )}
-                      {project.liveUrl && (
-                        <motion.a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className={`flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r ${project.gradient} text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300`}
-                        >
-                          <ExternalLink className="w-5 h-5" />
-                          {t("projects.liveDemo")}
-                        </motion.a>
-                      )}
-                    </div>
+                  {/* Action Buttons */}
+                  <div className="flex flex-wrap gap-4 mt-8">
+                    {project.githubUrl && (
+                      <motion.a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-900 dark:bg-gray-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                      >
+                        <Github className="w-5 h-5" />
+                        {t("projects.viewSourceCode")}
+                      </motion.a>
+                    )}
+                    {project.liveUrl && (
+                      <motion.a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r ${project.gradient} text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300`}
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                        {t("projects.liveDemo")}
+                      </motion.a>
+                    )}
                   </div>
+                </div>
 
                   {/* Right Column: Image Wrapper */}
                   <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl group-hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] transition-all duration-500 border border-gray-200/50 dark:border-gray-700/50">
@@ -250,10 +254,39 @@ export default function Projects() {
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
+
+        {/* More Projects GitHub CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-20 text-center"
+        >
+          <div className="inline-block p-8 rounded-3xl bg-white/50 dark:bg-gray-800/30 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+              {t("projects.moreProjectsTitle")}
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
+              {t("projects.moreProjectsDesc")}
+            </p>
+            <motion.a
+              href="https://github.com/Streak116"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <Github className="w-5 h-5" />
+              {t("projects.viewOnGithub")}
+            </motion.a>
+          </div>
+        </motion.div>
 
         {/* Floating Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
