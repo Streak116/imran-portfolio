@@ -15,7 +15,7 @@ const details = {
     "Building scalable enterprise applications 🚀",
     "Workflow automation & LCNC builder ⚙️",
     "Exploring AI & LLM-powered systems 🤖",
-    "Open to relocation: UAE, Qatar & KSA ✈️",
+    // "Open to relocation: UAE, Qatar & KSA ✈️",
   ],
   resumeLink: process.env.NEXT_PUBLIC_RESUME_URL || "/Imran_Full_Stack_Developer.pdf",
   linkedIn: "https://www.linkedin.com/in/md-116-imran",
