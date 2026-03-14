@@ -165,6 +165,17 @@ export const translations: Record<Language, any> = {
           "Interactive geospatial mapping of assets",
           "Role-based enterprise access control (RBAC)"
         ]
+      },
+      airStreak: {
+        title: "AirStreak",
+        tagline: "Secure Multi-Tenant SaaS for Aviation Academies",
+        description: "A production-grade monorepo platform with deep tenant isolation and aviation-grade auditing. Built with a 'Top Gun' aesthetic, it features complex scheduling workflows powered by BullMQ and a cached performance layer using Redis.",
+        features: [
+          "Multi-Tenant Isolation (Prisma/PostgreSQL)",
+          "BullMQ-Powered Background Escalations",
+          "Redis-Cached Read-Heavy Endpoints",
+          "Encrypted Audit Trails & RBAC Flow"
+        ]
       }
     },
     skillCategories: {
@@ -338,6 +349,17 @@ export const translations: Record<Language, any> = {
           "دمج البيانات الحية عبر websocket",
           "رسم الخرائط الجغرافية التفاعلية للأصول",
           "التحكم في الوصول إلى المؤسسة بناءً على الأدوار (RBAC)"
+        ]
+      },
+      airStreak: {
+        title: "اير ستريك (AirStreak)",
+        tagline: "نظام SaaS آمن لمدارس الطيران",
+        description: "منصة monorepo من الدرجة الإنتاجية مع عزل عميق للمستأجرين وتدقيق من فئة الطيران. تتميز بجمالية 'Top Gun'، وسير عمل جدولة معقد مدعوم بـ BullMQ وطبقة أداء مخزنة مؤقتاً باستخدام Redis.",
+        features: [
+          "عزل المستأجرين (Prisma/PostgreSQL)",
+          "تصعيدات خلفية مدعومة بـ BullMQ",
+          "نقاط نهاية مخزنة مؤقتاً بـ Redis",
+          "مسارات تدقيق مشفرة وتدفق RBAC"
         ]
       }
     },

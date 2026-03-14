@@ -23,7 +23,9 @@ import {
   SiVercel,
   SiRailway,
   SiTailwindcss,
-  SiBootstrap
+  SiBootstrap,
+  SiPrisma,
+  SiRedis
 } from "react-icons/si";
 import { FaJava, FaDatabase } from "react-icons/fa";
 import { Brain, Code2, Workflow, Blocks } from "lucide-react";
@@ -78,6 +80,7 @@ export default function Skills() {
         { name: "Express.js", icon: SiExpress },
         { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
         { name: "Django", icon: SiDjango, color: "#44B78B" },
+        { name: "BullMQ", icon: Workflow, color: "#E0234E" },
       ],
     },
     {
@@ -95,6 +98,8 @@ export default function Skills() {
       skills: [
         { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
         { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+        { name: "Prisma", icon: SiPrisma, color: "#5A67D8" },
+        { name: "Redis", icon: SiRedis, color: "#DC382D" },
       ],
     },
     {
@@ -107,6 +112,7 @@ export default function Skills() {
         { name: "AWS", icon: SiAmazon, color: "#FF9900" },
         { name: "Vercel", icon: VercelIconWrapper },
         { name: "Railway", icon: SiRailway },
+        { name: "Monorepo Architecture", icon: Blocks, color: "#6366F1" },
       ],
     },
   ];

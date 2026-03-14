@@ -2,17 +2,42 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ExternalLink, Github, Sparkles, TrendingUp, Zap } from "lucide-react";
-import { SiReact, SiNextdotjs, SiDjango, SiCelery, SiTypescript, SiPostgresql } from "react-icons/si";
+import { ExternalLink, Github, Sparkles, TrendingUp, Zap, Shield, Activity, Plane, HardDrive } from "lucide-react";
+import { SiReact, SiNextdotjs, SiDjango, SiCelery, SiTypescript, SiPostgresql, SiTailwindcss, SiDocker, SiNestjs, SiExpress, SiPrisma, SiRedis } from "react-icons/si";
 import { useLanguage } from "./LanguageContext";
 
 export default function Projects() {
   const { t } = useLanguage();
+  const tAirStreak = t("projectItems.airStreak");
   const tProfit = t("projectItems.profitStreak");
   // const tCrm = t("projectItems.crm");
   // const tSupply = t("projectItems.supplyChain");
 
   const projects = [
+    {
+      title: tAirStreak.title,
+      tagline: tAirStreak.tagline,
+      description: tAirStreak.description,
+      icon: "✈️",
+      gradient: "from-sky-600 via-blue-700 to-indigo-900",
+      techStack: [
+        { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
+        { name: "Express", icon: SiExpress, color: "#000000" },
+        { name: "Prisma", icon: SiPrisma, color: "#5A67D8" },
+        { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+        { name: "Redis", icon: SiRedis, color: "#DC382D" },
+        { name: "Docker", icon: SiDocker, color: "#2496ED" },
+      ],
+      features: [
+        { icon: Shield, text: tAirStreak.features[0] },
+        { icon: Activity, text: tAirStreak.features[1] },
+        { icon: HardDrive, text: tAirStreak.features[2] },
+        { icon: Plane, text: tAirStreak.features[3] },
+      ],
+      image: null, 
+      githubUrl: "https://github.com/Streak116",
+      liveUrl: "https://airstreak-web.vercel.app/", 
+    },
     {
       title: tProfit.title,
       tagline: tProfit.tagline,
@@ -23,7 +48,7 @@ export default function Projects() {
         { name: "React", icon: SiReact, color: "#61DAFB" },
         { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
         { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-        { name: "Django", icon: SiDjango, color: "#092E20" },
+        { name: "Django", icon: SiDjango, color: "#44B78B" },
         { name: "Celery", icon: SiCelery, color: "#37814A" },
         { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
       ],
@@ -161,8 +186,8 @@ export default function Projects() {
                            >
                              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100/80 dark:bg-gray-700/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50 transition-all duration-300 hover:shadow-md">
                                <Icon 
-                                 className="w-4 h-4 transition-transform duration-300 group-hover/badge:scale-110" 
-                                 style={{ color: tech.color }}
+                                 className={`w-4 h-4 transition-transform duration-300 group-hover/badge:scale-110 ${(tech.name === "Next.js" || tech.name === "Express") ? 'text-gray-900 dark:text-white' : ''}`} 
+                                 style={{ color: (tech.name === "Next.js" || tech.name === "Express") ? undefined : tech.color }}
                                />
                                <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
                                  {tech.name}
