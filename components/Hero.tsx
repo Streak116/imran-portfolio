@@ -9,7 +9,7 @@ import { useLanguage } from "./LanguageContext";
 
 const details = {
   name: "Mohammed Imran",
-  title: "Platform Engineer & Workflow Expert",
+  title: "Full Stack & Platform Engineer",
   profileImage: "/profile.jpg",
   taglines: [
     "Architecting enterprise low-code/no-code platforms ⚙️",
