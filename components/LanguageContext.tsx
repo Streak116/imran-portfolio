@@ -37,13 +37,21 @@ export const translations: Record<Language, any> = {
         "Building scalable enterprise applications 🚀",
         "Workflow automation & LCNC builder ⚙️",
         "Exploring AI & LLM-powered systems 🤖",
-        "Open to relocation: UAE, Qatar & KSA ✈️",
+        // "Open to relocation: UAE, Qatar & KSA ✈️",
       ],
       downloadResume: "Download Resume",
       whatsapp: "WhatsApp",
       linkedin: "LinkedIn",
       github: "GitHub",
-      scrollDown: "Scroll Down"
+      scrollDown: "Scroll Down",
+      valueStatement: "Full-Stack Engineer building scalable React & Node.js platforms, enterprise automation systems, and AI-powered applications."
+    },
+    about: {
+      heading: "About Me",
+      summary: "I'm a Full-Stack Software Engineer with 3+ years of experience building enterprise platforms, workflow automation systems, and low-code/no-code solutions. I work across the full stack — from crafting clean, performant React and Angular frontends to designing scalable backend APIs with Node.js and Java-based frameworks. Recently, I've been integrating AI-powered features like Retrieval-Augmented Generation (RAG) and semantic search into real-world applications. I enjoy solving complex engineering problems, collaborating across teams, and building software that is both technically sound and genuinely useful. I've had the opportunity to work with major banking clients including HDFC Bank and GXS Bank.",
+      highlight1: "3+ Years at Pennant Technologies",
+      highlight2: "Full-Stack & Platform Engineer",
+      highlight3: "Open to Relocation — UAE, Qatar, KSA"
     },
     work: {
       title: "Work Experience",
@@ -205,7 +213,15 @@ export const translations: Record<Language, any> = {
       whatsapp: "واتس آب",
       linkedin: "لينكد إن",
       github: "جيت هب",
-      scrollDown: "تمرير لأسفل"
+      scrollDown: "تمرير لأسفل",
+      valueStatement: "مهندس برمجيات شامل يبني منصات React & Node.js قابلة للتوسع، وأنظمة أتمتة مؤسسية، وتطبيقات مدعومة بالذكاء الاصطناعي."
+    },
+    about: {
+      heading: "نبذة عني",
+      summary: "أنا مهندس برمجيات شامل بخبرة تزيد على 3 سنوات في بناء منصات مؤسسية وأنظمة أتمتة سير العمل وحلول البرمجة المنخفضة وعديمة الكود. أعمل عبر المكدس الكامل — من بناء واجهات React وAngular نظيفة وعالية الأداء، إلى تصميم واجهات برمجية خلفية قابلة للتوسع باستخدام Node.js وإطارات Java. مؤخراً، أدمجت ميزات مدعومة بالذكاء الاصطناعي مثل نظام RAG والبحث الدلالي في تطبيقات حقيقية. أستمتع بحل مشكلات هندسية معقدة، والتعاون مع الفرق، وبناء برمجيات سليمة تقنياً ومفيدة فعلياً. عملت مع عملاء مصرفيين كبار من بينهم HDFC Bank وGXS Bank.",
+      highlight1: "+3 سنوات في Pennant Technologies",
+      highlight2: "مهندس برمجيات شامل ومنصات",
+      highlight3: "مستعد للانتقال — الإمارات، قطر، السعودية"
     },
     work: {
       title: "الخبرات العملية",

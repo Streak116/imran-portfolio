@@ -28,7 +28,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-10 py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-black overflow-hidden"
+      className="relative min-h-[92vh] flex flex-col md:flex-row items-center justify-center px-6 md:px-10 pt-0 pb-16 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-black overflow-hidden"
     >
       {/* Decorative floating elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
@@ -110,10 +110,21 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700 dark:text-gray-300"
+            className="text-2xl md:text-3xl font-semibold mb-4 text-gray-700 dark:text-gray-300"
           >
             <span className="text-indigo-600 dark:text-indigo-400">{t("hero.title")}</span>
           </motion.h2>
+
+          {/* Value statement */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            viewport={{ once: true }}
+            className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-5 leading-relaxed max-w-xl border-l-4 border-indigo-500/60 pl-4 italic"
+          >
+            {t("hero.valueStatement")}
+          </motion.p>
 
           {/* Typewriter Tagline with better styling */}
           <motion.div
